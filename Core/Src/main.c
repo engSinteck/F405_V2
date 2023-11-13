@@ -225,6 +225,14 @@ int main(void)
   sprintf(string_log, "\n\r STM32F405 CPU YAXUN v2.0.0 \n\r\n\r");
   LogSerial(string_log);
 
+  HAL_Delay(100);
+  sprintf(string_log, "ILI9341 Init....\n\r\n\r");
+  LogSerial(string_log);
+  ILI9341_Init();
+  ILI9341_Set_Address(0, 0, ILI9341_SCREEN_WIDTH-1, ILI9341_SCREEN_HEIGHT-1);
+  ILI9341_Set_Rotation(1);
+  ILI9341_Fill_Screen(BLACK);
+
   Evt_InitQueue();
   KeyboardInit(0x01);
 
@@ -250,7 +258,8 @@ int main(void)
 	  Read_Config_EEPROM();
   }
 
-  sprintf(string_log, "\n\r ILI9341 Init....\n\r\n\r");
+  HAL_Delay(100);
+  sprintf(string_log, "MAX31856 Init....\n\r\n\r\n\r");
   LogSerial(string_log);
 
   // Thermocouple Iron
@@ -258,7 +267,7 @@ int main(void)
   max31856_set_noise_filter(&therm_iron, CR0_FILTER_OUT_60Hz);
   max31856_set_cold_junction_enable(&therm_iron, CR0_CJ_ENABLED);
   max31856_set_thermocouple_type(&therm_iron, CR1_TC_TYPE_K);
-  max31856_set_average_samples(&therm_iron, CR1_AVG_TC_SAMPLES_2);
+  max31856_set_average_samples(&therm_iron, CR1_AVG_TC_SAMPLES_8);
   max31856_set_open_circuit_fault_detection(&therm_iron, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
   max31856_set_conversion_mode(&therm_iron, CR0_CONV_CONTINUOUS);
   temp_iron = max31856_read_TC_temp(&therm_iron);
@@ -268,16 +277,10 @@ int main(void)
   max31856_set_noise_filter(&therm_gun, CR0_FILTER_OUT_60Hz);
   max31856_set_cold_junction_enable(&therm_gun, CR0_CJ_ENABLED);
   max31856_set_thermocouple_type(&therm_gun, CR1_TC_TYPE_K);
-  max31856_set_average_samples(&therm_gun, CR1_AVG_TC_SAMPLES_2);
+  max31856_set_average_samples(&therm_gun, CR1_AVG_TC_SAMPLES_8);
   max31856_set_open_circuit_fault_detection(&therm_gun, CR0_OC_DETECT_ENABLED_TC_LESS_2ms);
   max31856_set_conversion_mode(&therm_gun, CR0_CONV_CONTINUOUS);
   temp_gun = max31856_read_TC_temp(&therm_gun);
-
-  //
-  ILI9341_Init();
-  ILI9341_Set_Address(0, 0, ILI9341_SCREEN_WIDTH-1, ILI9341_SCREEN_HEIGHT-1);
-  ILI9341_Set_Rotation(1);
-  ILI9341_Fill_Screen(BLACK);
 
   lv_init();
 
@@ -332,9 +335,15 @@ int main(void)
 		if (!therm_iron.sr.val) {
 			temp_iron = max31856_read_TC_temp(&therm_iron);
 		}
+		else {
+			temp_iron = 999.99f;
+		}
 		max31856_read_fault(&therm_gun);
 		if (!therm_gun.sr.val) {
 			temp_gun = max31856_read_TC_temp(&therm_gun);
+		}
+		else {
+			temp_gun = 999.99f;
 		}
 	}
 
