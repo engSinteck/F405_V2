@@ -203,6 +203,7 @@ int main(void)
   pwm_iron = 80;
   HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_1);
   __HAL_TIM_SetCompare(&htim9, TIM_CHANNEL_1, pwm_iron);	// PWM_CH1 = 4095 IRON
+
   // Start ADC
   idx_flt = 0;
   flt_flag = 0;
