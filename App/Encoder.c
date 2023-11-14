@@ -15,7 +15,7 @@ void Read_Encoder(void)
 	// Encoder 1
 	enc1_cnt = htim3.Instance->CNT >> 1;
 	if(enc1_cnt != enc1_last) {
-		  enc1_last  = enc1_cnt;
+		enc1_last  = enc1_cnt;
 	}
 	// Encoder 2
 	enc2_cnt = htim2.Instance->CNT >> 1;

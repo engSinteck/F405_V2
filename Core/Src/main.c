@@ -114,11 +114,11 @@ volatile int NumHandled  = 0;
 volatile bool zero_cross = 0;
 int NumActiveChannels = NUM_DIMMERS;
 volatile bool isHandled[NUM_DIMMERS] = { 0, 0 };
-uint8_t State[NUM_DIMMERS] = { 1, 1 };
-bool pLampState[2]={ false, false };
 uint32_t dimmer_value[NUM_DIMMERS]   = { 0, 0 };
 uint32_t dimmer_Counter[NUM_DIMMERS] = { 0, 0 };
+uint32_t dimmer_out[NUM_DIMMERS]     = { 0, 0 };
 uint32_t timer_cnt5 = 0;
+uint32_t timer_cnt5_max = 0;
 
 float vdda = 0.0f; 		// Result of VDDA calculation
 float vref = 0.0f; 		// Result of VREF calculation
@@ -323,6 +323,11 @@ int main(void)
 	// Read Encoders
 	Read_Encoder();
 
+	// Update Value Dimmer
+	dimmer_value[0] = enc1_last / 10;
+	dimmer_value[1] = enc2_last / 10;
+	pwm_iron = (uint16_t)enc3_last * 4;
+
 	// Buttons Encoders
 	KeyboardEvent();
 
@@ -350,9 +355,8 @@ int main(void)
 	// Log Debug
 	if(HAL_GetTick() - timer_debug > 1000) {
 		timer_debug = HAL_GetTick();
-		sprintf(string_log, "ENC1: %04ld  BT: %ld - ENC2: %04ld  BT: %ld - ENC3: %04ld  BT: %ld - idx: %ld BT: %d\n\r",
-			    enc1_last, enc1_btn, enc2_last, enc2_btn, enc3_last, enc3_btn, tx_uart_isr,
-				HAL_GPIO_ReadPin(KEY_USER_GPIO_Port, KEY_USER_Pin) );
+		sprintf(string_log, "ENC1: %04ld [0] %ld ( %ld )  [1] %ld ( %ld ) PWM: %d Idx:%ld \n\r",
+			    enc1_last, dimmer_value[0], dimmer_out[0], dimmer_value[1], dimmer_out[1], pwm_iron, tx_uart_isr);
 		LogSerial(string_log);
 	}
   }
@@ -521,8 +525,11 @@ void Zero_Crossing_Int(void)
 
 	isHandled[0] = 0;
 	isHandled[1] = 0;
+	timer_cnt5_max = timer_cnt5;
 	timer_cnt5 = 0;
 	zero_cross = 1;
+	dimmer_Counter[0] = 0;
+	dimmer_Counter[1] = 0;
 	HAL_GPIO_WritePin(DIMMER_1_GPIO_Port, DIMMER_1_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(DIMMER_2_GPIO_Port, DIMMER_2_Pin, GPIO_PIN_SET);
 }
@@ -531,24 +538,21 @@ void dimmerTimerISR(void)
 {
 	if(zero_cross == 1) {
 		for(int i = 0; i < NUM_DIMMERS; i++) {
-			if(State[i] == 1) {
-				if( dimmer_Counter[i] > (DIMMER_VALUE_MAX - dimmer_value[i]) ) {
-					if(i == 0){
-						HAL_GPIO_WritePin(DIMMER_1_GPIO_Port, DIMMER_1_Pin, GPIO_PIN_RESET);
-						pLampState[i] = true;
-					}else if(i  == 1){
-						HAL_GPIO_WritePin(DIMMER_2_GPIO_Port, DIMMER_2_Pin, GPIO_PIN_RESET);
-						pLampState[i] = true;
-					}
-					isHandled[i] = 1;
-					NumHandled++;
-					if(NumHandled == NumActiveChannels) {
-						zero_cross = 0;
-					}
+			if( dimmer_Counter[i] >= (DIMMER_VALUE_MAX - dimmer_value[i]) ) {
+				dimmer_out[i] = DIMMER_VALUE_MAX - dimmer_value[i];
+				if(i == 0){
+					HAL_GPIO_WritePin(DIMMER_1_GPIO_Port, DIMMER_1_Pin, GPIO_PIN_RESET);
+				}else if(i  == 1){
+					HAL_GPIO_WritePin(DIMMER_2_GPIO_Port, DIMMER_2_Pin, GPIO_PIN_RESET);
 				}
-				else if(isHandled[i] == 0) {
-					dimmer_Counter[i]++;
+				isHandled[i] = 1;
+				NumHandled++;
+				if(NumHandled == NumActiveChannels) {
+					zero_cross = 0;
 				}
+			}
+			else if(isHandled[i] == 0) {
+				dimmer_Counter[i]++;
 			}
 		}
 	}
@@ -596,7 +600,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   // Timer Teste Zero Cross 120Hz
   if(htim->Instance == TIM12) {			// 120Hz - 8.33ms
-	  timer_cnt5 = 0;
 	  HAL_GPIO_WritePin(TEST_120Hz_GPIO_Port, TEST_120Hz_Pin, GPIO_PIN_SET);
   	  for(uint16_t u = 0; u < 800; u++) {
   		  __NOP();

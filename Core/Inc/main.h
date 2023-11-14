@@ -106,10 +106,10 @@ void Error_Handler(void);
 #define SPI_MISO_GPIO_Port GPIOB
 #define SPI_MOSI_Pin GPIO_PIN_15
 #define SPI_MOSI_GPIO_Port GPIOB
-#define ENC3_A_Pin GPIO_PIN_6
-#define ENC3_A_GPIO_Port GPIOC
-#define ENC3_B_Pin GPIO_PIN_7
-#define ENC3_B_GPIO_Port GPIOC
+#define ENC1_A_Pin GPIO_PIN_6
+#define ENC1_A_GPIO_Port GPIOC
+#define ENC1_B_Pin GPIO_PIN_7
+#define ENC1_B_GPIO_Port GPIOC
 #define SD_DETECT_Pin GPIO_PIN_8
 #define SD_DETECT_GPIO_Port GPIOA
 #define TEST_120Hz_Pin GPIO_PIN_15
@@ -118,10 +118,10 @@ void Error_Handler(void);
 #define DIMMER_1_GPIO_Port GPIOB
 #define TFT_RST_Pin GPIO_PIN_5
 #define TFT_RST_GPIO_Port GPIOB
-#define ENC3_AB6_Pin GPIO_PIN_6
-#define ENC3_AB6_GPIO_Port GPIOB
-#define ENC3_BB7_Pin GPIO_PIN_7
-#define ENC3_BB7_GPIO_Port GPIOB
+#define ENC3_A_Pin GPIO_PIN_6
+#define ENC3_A_GPIO_Port GPIOB
+#define ENC3_B_Pin GPIO_PIN_7
+#define ENC3_B_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
