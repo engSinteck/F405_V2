@@ -193,7 +193,7 @@ SECTIONS
     . = . + _Min_Stack_Size;
     . = ALIGN(8);
   } >RAM
-  
+
   .tabram : { *(.TFT_section) } >CCMRAM
   
   .ramtft(NOLOAD) : {
