@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="9.5.1">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
+<layer number="3" name="Route3" color="17" fill="1" visible="no" active="yes"/>
+<layer number="4" name="Route4" color="18" fill="1" visible="no" active="yes"/>
+<layer number="5" name="Route5" color="19" fill="1" visible="no" active="yes"/>
+<layer number="6" name="Route6" color="25" fill="1" visible="no" active="yes"/>
+<layer number="7" name="Route7" color="26" fill="1" visible="no" active="yes"/>
+<layer number="8" name="Route8" color="27" fill="1" visible="no" active="yes"/>
+<layer number="9" name="Route9" color="28" fill="1" visible="no" active="yes"/>
+<layer number="10" name="Route10" color="29" fill="1" visible="no" active="yes"/>
+<layer number="11" name="Route11" color="30" fill="1" visible="no" active="yes"/>
+<layer number="12" name="Route12" color="20" fill="1" visible="no" active="yes"/>
+<layer number="13" name="Route13" color="21" fill="1" visible="no" active="yes"/>
+<layer number="14" name="Route14" color="22" fill="1" visible="no" active="yes"/>
+<layer number="15" name="Route15" color="23" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="100" name="5V" color="13" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<packages>
+<package name="F405_WEACT">
+<description>STM32F405-WEACT</description>
+<pad name="VB" x="-7.62" y="5.08" drill="1" shape="square"/>
+<pad name="GND_4" x="-5.08" y="5.08" drill="1"/>
+<pad name="PC14" x="-7.62" y="2.54" drill="1"/>
+<pad name="PC13" x="-5.08" y="2.54" drill="1"/>
+<pad name="PC0" x="-7.62" y="0" drill="1"/>
+<pad name="PC15" x="-5.08" y="0" drill="1"/>
+<pad name="PC2" x="-7.62" y="-2.54" drill="1"/>
+<pad name="PC1" x="-5.08" y="-2.54" drill="1"/>
+<pad name="PA0" x="-7.62" y="-5.08" drill="1"/>
+<pad name="PC3" x="-5.08" y="-5.08" drill="1"/>
+<pad name="PA2" x="-7.62" y="-7.62" drill="1"/>
+<pad name="PA1" x="-5.08" y="-7.62" drill="1"/>
+<pad name="PA4" x="-7.62" y="-10.16" drill="1"/>
+<pad name="PA3" x="-5.08" y="-10.16" drill="1"/>
+<pad name="PA6" x="-7.62" y="-12.7" drill="1"/>
+<pad name="PA5" x="-5.08" y="-12.7" drill="1"/>
+<pad name="PC4" x="-7.62" y="-15.24" drill="1"/>
+<pad name="PA7" x="-5.08" y="-15.24" drill="1"/>
+<pad name="PB0" x="-7.62" y="-17.78" drill="1"/>
+<pad name="PC5" x="-5.08" y="-17.78" drill="1"/>
+<pad name="PB2" x="-7.62" y="-20.32" drill="1"/>
+<pad name="PB1" x="-5.08" y="-20.32" drill="1"/>
+<pad name="PB11" x="-7.62" y="-22.86" drill="1"/>
+<pad name="PB10" x="-5.08" y="-22.86" drill="1"/>
+<pad name="3V3_1" x="-7.62" y="-25.4" drill="1"/>
+<pad name="GND_1" x="-5.08" y="-25.4" drill="1"/>
+<pad name="3V3_2" x="-7.62" y="-27.94" drill="1"/>
+<pad name="GND_2" x="-5.08" y="-27.94" drill="1"/>
+<pad name="3V3_3" x="-7.62" y="-30.48" drill="1"/>
+<pad name="GND_3" x="-5.08" y="-30.48" drill="1"/>
+<pad name="PB9" x="20.32" y="5.08" drill="1" shape="square"/>
+<pad name="GND_5" x="22.86" y="5.08" drill="1"/>
+<pad name="PB7" x="20.32" y="2.54" drill="1"/>
+<pad name="PB8" x="22.86" y="2.54" drill="1"/>
+<pad name="PB5" x="20.32" y="0" drill="1"/>
+<pad name="PB6" x="22.86" y="0" drill="1"/>
+<pad name="PB3" x="20.32" y="-2.54" drill="1"/>
+<pad name="PB4" x="22.86" y="-2.54" drill="1"/>
+<pad name="PC12" x="20.32" y="-5.08" drill="1"/>
+<pad name="PD2" x="22.86" y="-5.08" drill="1"/>
+<pad name="PC10" x="20.32" y="-7.62" drill="1"/>
+<pad name="PC11" x="22.86" y="-7.62" drill="1"/>
+<pad name="PA12" x="20.32" y="-10.16" drill="1"/>
+<pad name="PA15" x="22.86" y="-10.16" drill="1"/>
+<pad name="PA10" x="20.32" y="-12.7" drill="1"/>
+<pad name="PA11" x="22.86" y="-12.7" drill="1"/>
+<pad name="PA8" x="20.32" y="-15.24" drill="1"/>
+<pad name="PA9" x="22.86" y="-15.24" drill="1"/>
+<pad name="PC8" x="20.32" y="-17.78" drill="1"/>
+<pad name="PC9" x="22.86" y="-17.78" drill="1"/>
+<pad name="PC6" x="20.32" y="-20.32" drill="1"/>
+<pad name="PC7" x="22.86" y="-20.32" drill="1"/>
+<pad name="PB14" x="20.32" y="-22.86" drill="1"/>
+<pad name="PB15" x="22.86" y="-22.86" drill="1"/>
+<pad name="PB12" x="20.32" y="-25.4" drill="1"/>
+<pad name="PB13" x="22.86" y="-25.4" drill="1"/>
+<pad name="5V_1" x="20.32" y="-27.94" drill="1"/>
+<pad name="5V_2" x="22.86" y="-27.94" drill="1"/>
+<pad name="GND_6" x="20.32" y="-30.48" drill="1"/>
+<pad name="GND_7" x="22.86" y="-30.48" drill="1"/>
+<wire x1="-8.89" y1="6.35" x2="24.13" y2="6.35" width="0.254" layer="21"/>
+<wire x1="-8.89" y1="6.35" x2="-8.89" y2="-33.02" width="0.254" layer="21"/>
+<wire x1="24.13" y1="-33.02" x2="24.13" y2="6.35" width="0.254" layer="21"/>
+<wire x1="-7.62" y1="-34.29" x2="22.86" y2="-34.29" width="0.254" layer="21"/>
+<wire x1="24.13" y1="-33.02" x2="22.86" y2="-34.29" width="0.254" layer="21" curve="-90"/>
+<wire x1="-8.89" y1="-33.02" x2="-7.62" y2="-34.29" width="0.254" layer="21" curve="90"/>
+</package>
+</packages>
+<symbols>
+<symbol name="F405_WEACT">
+<description>Symbol F405-Weact</description>
+<pin name="PB1" x="-30.48" y="5.08" length="middle"/>
+<pin name="PB2" x="-30.48" y="2.54" length="middle"/>
+<pin name="PB3" x="-30.48" y="0" length="middle"/>
+<pin name="PB4" x="-30.48" y="-2.54" length="middle"/>
+<pin name="PB5" x="-30.48" y="-5.08" length="middle"/>
+<pin name="PB6" x="-30.48" y="-7.62" length="middle"/>
+<pin name="PB7" x="-30.48" y="-10.16" length="middle"/>
+<pin name="PB8" x="-30.48" y="-12.7" length="middle"/>
+<pin name="PB9" x="-30.48" y="-15.24" length="middle"/>
+<pin name="PB10" x="-30.48" y="-17.78" length="middle"/>
+<pin name="PB11" x="-30.48" y="-20.32" length="middle"/>
+<pin name="PB12" x="-30.48" y="-22.86" length="middle"/>
+<pin name="PB13" x="-30.48" y="-25.4" length="middle"/>
+<pin name="PB14" x="-30.48" y="-27.94" length="middle"/>
+<pin name="PC0" x="20.32" y="7.62" length="middle" rot="R180"/>
+<pin name="PC1" x="20.32" y="5.08" length="middle" rot="R180"/>
+<pin name="PC2" x="20.32" y="2.54" length="middle" rot="R180"/>
+<pin name="PC3" x="20.32" y="0" length="middle" rot="R180"/>
+<pin name="PC4" x="20.32" y="-2.54" length="middle" rot="R180"/>
+<pin name="PC5" x="20.32" y="-5.08" length="middle" rot="R180"/>
+<pin name="PC6" x="20.32" y="-7.62" length="middle" rot="R180"/>
+<pin name="PC7" x="20.32" y="-10.16" length="middle" rot="R180"/>
+<pin name="PC8" x="20.32" y="-12.7" length="middle" rot="R180"/>
+<pin name="PC9" x="20.32" y="-15.24" length="middle" rot="R180"/>
+<pin name="PC10" x="20.32" y="-17.78" length="middle" rot="R180"/>
+<pin name="PC11" x="20.32" y="-20.32" length="middle" rot="R180"/>
+<pin name="PC12" x="20.32" y="-22.86" length="middle" rot="R180"/>
+<pin name="PC13" x="20.32" y="-25.4" length="middle" rot="R180"/>
+<pin name="PC14" x="20.32" y="-27.94" length="middle" rot="R180"/>
+<wire x1="-25.4" y1="10.16" x2="-25.4" y2="-83.82" width="0.254" layer="94"/>
+<wire x1="-25.4" y1="-83.82" x2="15.24" y2="-83.82" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-83.82" x2="15.24" y2="10.16" width="0.254" layer="94"/>
+<wire x1="15.24" y1="10.16" x2="-25.4" y2="10.16" width="0.254" layer="94"/>
+<pin name="PB0" x="-30.48" y="7.62" length="middle"/>
+<pin name="PB15" x="-30.48" y="-30.48" length="middle"/>
+<pin name="PA0" x="-30.48" y="-35.56" length="middle"/>
+<pin name="PC15" x="20.32" y="-30.48" length="middle" rot="R180"/>
+<pin name="PD2" x="20.32" y="-35.56" length="middle" rot="R180"/>
+<pin name="PA1" x="-30.48" y="-38.1" length="middle"/>
+<pin name="PA2" x="-30.48" y="-40.64" length="middle"/>
+<pin name="PA3" x="-30.48" y="-43.18" length="middle"/>
+<pin name="PA4" x="-30.48" y="-45.72" length="middle"/>
+<pin name="PA5" x="-30.48" y="-48.26" length="middle"/>
+<pin name="PA6" x="-30.48" y="-50.8" length="middle"/>
+<pin name="PA7" x="-30.48" y="-53.34" length="middle"/>
+<pin name="PA8" x="-30.48" y="-55.88" length="middle"/>
+<pin name="PA9" x="-30.48" y="-58.42" length="middle"/>
+<pin name="PA10" x="-30.48" y="-60.96" length="middle"/>
+<pin name="PA11" x="-30.48" y="-63.5" length="middle"/>
+<pin name="PA12" x="-30.48" y="-66.04" length="middle"/>
+<pin name="PA15" x="-30.48" y="-68.58" length="middle"/>
+<pin name="GND7" x="20.32" y="-81.28" length="middle" rot="R180"/>
+<pin name="GND6" x="20.32" y="-78.74" length="middle" rot="R180"/>
+<pin name="GND5" x="20.32" y="-76.2" length="middle" rot="R180"/>
+<pin name="GND4" x="20.32" y="-73.66" length="middle" rot="R180"/>
+<pin name="GND3" x="20.32" y="-71.12" length="middle" rot="R180"/>
+<pin name="GND2" x="20.32" y="-68.58" length="middle" rot="R180"/>
+<pin name="GND1" x="20.32" y="-66.04" length="middle" rot="R180"/>
+<pin name="VCC_2" x="20.32" y="-58.42" length="middle" rot="R180"/>
+<pin name="VCC_1" x="20.32" y="-55.88" length="middle" rot="R180"/>
+<pin name="3V3_3" x="-30.48" y="-81.28" length="middle"/>
+<pin name="3V3_2" x="-30.48" y="-78.74" length="middle"/>
+<pin name="3V3_1" x="-30.48" y="-76.2" length="middle"/>
+<pin name="VB" x="20.32" y="-45.72" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="F405_WEACT" prefix="U?">
+<description>F405_WEACT</description>
+<gates>
+<gate name="G$1" symbol="F405_WEACT" x="5.08" y="43.18"/>
+</gates>
+<devices>
+<device name="" package="F405_WEACT">
+<connects>
+<connect gate="G$1" pin="3V3_1" pad="3V3_1"/>
+<connect gate="G$1" pin="3V3_2" pad="3V3_2"/>
+<connect gate="G$1" pin="3V3_3" pad="3V3_3"/>
+<connect gate="G$1" pin="GND1" pad="GND_1"/>
+<connect gate="G$1" pin="GND2" pad="GND_2"/>
+<connect gate="G$1" pin="GND3" pad="GND_3"/>
+<connect gate="G$1" pin="GND4" pad="GND_4"/>
+<connect gate="G$1" pin="GND5" pad="GND_5"/>
+<connect gate="G$1" pin="GND6" pad="GND_6"/>
+<connect gate="G$1" pin="GND7" pad="GND_7"/>
+<connect gate="G$1" pin="PA0" pad="PA0"/>
+<connect gate="G$1" pin="PA1" pad="PA1"/>
+<connect gate="G$1" pin="PA10" pad="PA10"/>
+<connect gate="G$1" pin="PA11" pad="PA11"/>
+<connect gate="G$1" pin="PA12" pad="PA12"/>
+<connect gate="G$1" pin="PA15" pad="PA15"/>
+<connect gate="G$1" pin="PA2" pad="PA2"/>
+<connect gate="G$1" pin="PA3" pad="PA3"/>
+<connect gate="G$1" pin="PA4" pad="PA4"/>
+<connect gate="G$1" pin="PA5" pad="PA5"/>
+<connect gate="G$1" pin="PA6" pad="PA6"/>
+<connect gate="G$1" pin="PA7" pad="PA7"/>
+<connect gate="G$1" pin="PA8" pad="PA8"/>
+<connect gate="G$1" pin="PA9" pad="PA9"/>
+<connect gate="G$1" pin="PB0" pad="PB0"/>
+<connect gate="G$1" pin="PB1" pad="PB1"/>
+<connect gate="G$1" pin="PB10" pad="PB10"/>
+<connect gate="G$1" pin="PB11" pad="PB11"/>
+<connect gate="G$1" pin="PB12" pad="PB12"/>
+<connect gate="G$1" pin="PB13" pad="PB13"/>
+<connect gate="G$1" pin="PB14" pad="PB14"/>
+<connect gate="G$1" pin="PB15" pad="PB15"/>
+<connect gate="G$1" pin="PB2" pad="PB2"/>
+<connect gate="G$1" pin="PB3" pad="PB3"/>
+<connect gate="G$1" pin="PB4" pad="PB4"/>
+<connect gate="G$1" pin="PB5" pad="PB5"/>
+<connect gate="G$1" pin="PB6" pad="PB6"/>
+<connect gate="G$1" pin="PB7" pad="PB7"/>
+<connect gate="G$1" pin="PB8" pad="PB8"/>
+<connect gate="G$1" pin="PB9" pad="PB9"/>
+<connect gate="G$1" pin="PC0" pad="PC0"/>
+<connect gate="G$1" pin="PC1" pad="PC1"/>
+<connect gate="G$1" pin="PC10" pad="PC10"/>
+<connect gate="G$1" pin="PC11" pad="PC11"/>
+<connect gate="G$1" pin="PC12" pad="PC12"/>
+<connect gate="G$1" pin="PC13" pad="PC13"/>
+<connect gate="G$1" pin="PC14" pad="PC14"/>
+<connect gate="G$1" pin="PC15" pad="PC15"/>
+<connect gate="G$1" pin="PC2" pad="PC2"/>
+<connect gate="G$1" pin="PC3" pad="PC3"/>
+<connect gate="G$1" pin="PC4" pad="PC4"/>
+<connect gate="G$1" pin="PC5" pad="PC5"/>
+<connect gate="G$1" pin="PC6" pad="PC6"/>
+<connect gate="G$1" pin="PC7" pad="PC7"/>
+<connect gate="G$1" pin="PC8" pad="PC8"/>
+<connect gate="G$1" pin="PC9" pad="PC9"/>
+<connect gate="G$1" pin="PD2" pad="PD2"/>
+<connect gate="G$1" pin="VB" pad="VB"/>
+<connect gate="G$1" pin="VCC_1" pad="5V_1"/>
+<connect gate="G$1" pin="VCC_2" pad="5V_2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
